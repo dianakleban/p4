@@ -18,17 +18,6 @@ class StudentController extends Controller
     ]);
   }
 
-/*  public function result(Request $request)
-  {
-
-    return view('student.result')->with([
-      'name'=>session('name'),
-      'email'=>session('email'),
-      'comments'=>session('comments'),
-      'lang'=>session('lang')
-    ]);
-  }*/
-
   public function store(Request $request)
   {
     //validation
@@ -52,7 +41,7 @@ class StudentController extends Controller
   }
 
   public function all()
-   {
-      return view('student.all');
-   }
+  {
+    return view('student.all');
+  }
 }
