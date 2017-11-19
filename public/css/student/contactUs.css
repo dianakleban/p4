@@ -207,3 +207,37 @@ nav ul li a:hover {
 a.active:link, a.active:visited, a.active:active, a.active:hover {
     color:#000040;
 }
+
+#studentsTbl
+{
+    border:  1px solid navy;
+    background-color: #E6E6E6;
+    border-bottom-right-radius:1em;
+    border-bottom-left-radius:1em;
+    -webkit-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+    -moz-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+    box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+}
+
+#studentsTbl caption
+{
+    background-color: Navy;
+    color: White;
+    padding: 0.5em;
+    border-top-right-radius:1em;
+    border-top-left-radius:1em;
+}
+
+th, td {
+    padding: 0.5em;
+}
+
+thead tr th { text-align: left; border-bottom: 1px solid navy; font-weight: bold; }
+
+tbody tr th{
+    color: navy;
+    font-weight: bold;
+    text-align: left;
+    border: none;
+
+}

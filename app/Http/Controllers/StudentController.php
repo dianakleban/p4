@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Student;
 
 class StudentController extends Controller
 {
@@ -13,8 +14,7 @@ class StudentController extends Controller
     return view('student.index')->with([
       'name'=>session('name'),
       'email'=>session('email'),
-      'comments'=>session('comments'),
-      'lang'=>session('lang')
+      'language'=>session('language')
     ]);
   }
 
@@ -24,24 +24,36 @@ class StudentController extends Controller
     $this->validate($request, [
       'name' => 'required|regex:/^[\pL\s\-]+$/u',
       'email'=> 'required|email',
-      'lang'=> 'required'
+      'language'=> 'required'
     ]);
 
     $name = $request->input('name');
     $email = $request->input('email');
-    $comments = $request->input('comments');
-    $lang = $request->input('lang');
+    $language = $request->input('language');
+
+    //Adding Student to the database
+    $student = new Student();
+    $student->name = $request->input('name');
+    $student->email = $request->input('email');
+    $student->language = $request->input('language');
+    $student->save();
 
     return redirect('/')->with([
       'name'=>$name,
       'email'=>$email,
-      'comments'=>$comments,
-      'lang'=>$lang
+      'language'=>$language
     ]);
   }
 
+
+
+
   public function all()
   {
-    return view('student.all');
+    $students = Student::orderBy('language')->orderBy('name')->get();
+
+    return view('student.all')->with([
+      'students' => $students
+    ]);
   }
 }

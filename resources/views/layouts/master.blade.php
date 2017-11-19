@@ -11,7 +11,7 @@
 <body>
 	<div id="wrapper">
 		<header>
-			<h1>Language School - Project 4<img src="/img/phone.jpg" id="imgId" title="Contact Us" alt="Contact Us" /></h1>
+			<h1>Language School<img src="/img/phone.jpg" id="imgId" title="Contact Us" alt="Contact Us" /></h1>
 			<nav>
             <ul>
                 <li><a href='/'>Add Student</a></li>

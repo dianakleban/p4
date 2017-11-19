@@ -20,7 +20,7 @@ Route::get('/all', 'StudentController@all');
 
 //for testing only:
 //Route::get('/practice', 'PracticeController@practice');
-
+/*
 Route::get('/env', function () {
     dump(config('app.name'));
     dump(config('app.env'));
@@ -41,7 +41,7 @@ Route::get('/debug', function () {
     Uncomment this line only if you're facing difficulties connecting to the
     database and you need to confirm your credentials. When you're done
     debugging, comment it back out so you don't accidentally leave it
-    running on your production server, making your credentials public.*/
+    running on your production server, making your credentials public.
 
     #$debug['MySQL connection config'] = config('database.connections.mysql');
 
@@ -56,7 +56,7 @@ Route::get('/debug', function () {
     dump($debug);
 });
 
-/*
+
 Route::get('/', function () {
     return view('welcome');
 });

@@ -31,21 +31,17 @@ Language School
 
     <p>
       <label for="langId" class="category"><span class="reqMsg">*</span> Language to Learn:</label>
-      <select name="lang" id="langId">
+      <select name="language" id="langId">
         <option value=''>Select</option>
-        <option value='Russian' {{ (old('lang') == 'Russian') ? 'SELECTED' : '' }}>Russian</option>
-        <option value='English' {{ (old('lang') == 'English') ? 'SELECTED' : '' }}>English</option>
-        <option value='French' {{ (old('lang') == 'French') ? 'SELECTED' : '' }}>French</option>
-        <option value='Italian' {{ (old('lang') == 'Italian') ? 'SELECTED' : '' }}>Italian</option>
+        <option value='Russian' {{ (old('language') == 'Russian') ? 'SELECTED' : '' }}>Russian</option>
+        <option value='English' {{ (old('language') == 'English') ? 'SELECTED' : '' }}>English</option>
+        <option value='French' {{ (old('language') == 'French') ? 'SELECTED' : '' }}>French</option>
+        <option value='Italian' {{ (old('language') == 'Italian') ? 'SELECTED' : '' }}>Italian</option>
       </select>
-      @include('modules.error-field', ['fieldName' => 'lang'])
+      @include('modules.error-field', ['fieldName' => 'language'])
     </p>
 
-    <p>
-      <label for="comments" class="category">Comments: </label><br />
-      <textarea name="comments" cols="60" rows="6" id="comments" placeholder="Additional Info">{{ old('comments') }}</textarea>
-    </p>
-
+    <br>
     <input type="submit" value="Submit" class="subBtn"/><span class="reqInfo">* Required fields</span>
 
   </fieldset>
@@ -59,16 +55,12 @@ Language School
     ,<span class="yourNm"> {{ $name }} </span>!
     @endif
   </p>
-
-  @if(trim($comments) !='')
-  <p>Thank you for your comments: "{{ $comments }}"</p>
-  @endif
-
-  @if($lang !='')
-  <p> Great Choice of Language: "{{ $lang  }}"</p>
+  
+  @if($language !='')
+  <p> Great Choice of Language: "{{ $language  }}"</p>
 
   <p> Did you know:
-    @switch($lang)
+    @switch($language)
     @case('Russian')
     "Russian is a Slavic language of the Indo-European family! Russian alphabet consists of 33 letters."</p>
     @break
