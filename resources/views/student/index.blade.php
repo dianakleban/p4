@@ -55,7 +55,7 @@ Language School
     ,<span class="yourNm"> {{ $name }} </span>!
     @endif
   </p>
-  
+
   @if($language !='')
   <p> Great Choice of Language: "{{ $language  }}"</p>
 

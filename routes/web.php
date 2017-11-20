@@ -11,12 +11,22 @@
 |
 */
 
-
+#Add Student
 Route::get('/', 'StudentController@index');
-//Route::get('/result', 'StudentController@result');
 Route::post('/student', 'StudentController@store');
 
+#All Students - Admin
 Route::get('/all', 'StudentController@all');
+
+#Edit Student
+Route::get('/student/{id}/edit', 'StudentController@edit');
+Route::put('/student/{id}', 'StudentController@update');
+
+#View Student
+Route::get('/student/{id}', 'StudentController@show');
+
+#Delete Student
+Route::get('/student/{id}/delete', 'StudentController@delete');
 
 //for testing only:
 //Route::get('/practice', 'PracticeController@practice');

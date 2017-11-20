@@ -36,4 +36,11 @@ Language School
   </tbody>
 </table>
 
+@if(session('alert'))
+  <div class="welcome">
+  {{ session('alert')}}
+ </div>
+@endif
+
+
 @endsection
