@@ -25,8 +25,11 @@ View {{ $student->name }}
     <tr><th scope="row">Name:</th><td>{{ $student['name'] }}</td></tr>
     <tr><th scope="row">Email:</th><td>{{ $student['email'] }}</td></tr>
     <tr><th scope="row">Language:</th><td>{{ $student['language'] }}</td></tr>
-    <tr><th scope="row"><a href='/all'>All Students</a></th><td><a href='/student/{{ $student['id'] }}/edit'>Edit</a></td></tr>
-    <tr><th scope="row"></th><td><a href='/student/{{ $student['id'] }}/delete'>Delete</a></td></tr>
+    <tr><th scope="row"></th><td><a href='/student/{{ $student['id'] }}/edit'>Edit</a> &nbsp&nbsp;
+      <a href='/student/{{ $student['id'] }}/delete'>Delete</a>&nbsp&nbsp;
+      <a href='/all'>All Students</a></td>
+    </tr>
+
   </tbody>
 </table>
 

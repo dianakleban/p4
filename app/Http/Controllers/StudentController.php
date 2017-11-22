@@ -17,7 +17,8 @@ class StudentController extends Controller
       'language'=>session('language')
     ]);
   }
-
+  
+  #Add student info into database
   public function store(Request $request)
   {
     //validation
@@ -45,13 +46,20 @@ class StudentController extends Controller
     ]);
   }
 
+  #Edit student
   public function edit($id)
   {
     $student = Student::find($id);
 
+    if (!$student)
+    {
+      return redirect('/all')->with('alert', 'Student not found');
+    }
+
     return view('student.edit')->with(['student' => $student]);
   }
 
+  #Update edited student
   public function update(Request $request, $id)
   {
     $this->validate($request, [
@@ -70,26 +78,40 @@ class StudentController extends Controller
     return redirect('/student/'.$id.'/edit')->with('alert', 'Your changes were saved.');
   }
 
+  #View student
   public function show($id)
   {
     $student = Student::find($id);
+
+    if (!$student)
+    {
+      return redirect('/all')->with('alert', 'Student not found');
+    }
 
     return view('student.show')->with([
       'student' => $student
     ]);
   }
 
+  #Delete student
   public function delete($id)
   {
 
-    $student = Student::find($id);#->delete();
+    $student = Student::find($id);
+
+    if (!$student)
+    {
+      return redirect('/all')->with('alert', 'Student not found');
+    }
+
     $removedStudent = $student->name;
     $student->delete();
 
-   return redirect('/all')->with('alert', 'Student deleted: '.$removedStudent);
+    return redirect('/all')->with('alert', 'Student deleted: '.$removedStudent);
 
   }
 
+  #Show All Students
   public function all()
   {
     $students = Student::orderBy('language')->orderBy('name')->get();

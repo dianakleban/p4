@@ -54,10 +54,10 @@ Language School
 <!--if there is no errors-->
 @if(count($errors) == 0)
   @if(session('alert'))
-    <div class="welcome">
+  <div class="welcome">
     {{ session('alert')}}
-   </div>
+  </div>
   @endif
 @endif
 
-  @endsection
+@endsection

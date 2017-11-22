@@ -37,9 +37,9 @@ Language School
 </table>
 
 @if(session('alert'))
-  <div class="welcome">
-  {{ session('alert')}}
- </div>
+<div class="welcome">
+  {{ session('alert') }}
+</div>
 @endif
 
 

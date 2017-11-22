@@ -28,9 +28,7 @@ Route::get('/student/{id}', 'StudentController@show');
 #Delete Student
 Route::get('/student/{id}/delete', 'StudentController@delete');
 
-//for testing only:
-//Route::get('/practice', 'PracticeController@practice');
-/*
+
 Route::get('/env', function () {
     dump(config('app.name'));
     dump(config('app.env'));
@@ -38,7 +36,7 @@ Route::get('/env', function () {
     dump(config('app.url'));
 });
 
-
+//for testing only:
 Route::get('/debug', function () {
 
     $debug = [
@@ -51,7 +49,7 @@ Route::get('/debug', function () {
     Uncomment this line only if you're facing difficulties connecting to the
     database and you need to confirm your credentials. When you're done
     debugging, comment it back out so you don't accidentally leave it
-    running on your production server, making your credentials public.
+    running on your production server, making your credentials public.*/
 
     #$debug['MySQL connection config'] = config('database.connections.mysql');
 
@@ -65,20 +63,3 @@ Route::get('/debug', function () {
 
     dump($debug);
 });
-
-
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/debugbar', function () {
-
-    $data = ['foo' => 'bar'];
-    Debugbar::info($data);
-    Debugbar::info('Current environment: '.App::environment());
-    Debugbar::error('Error!');
-    Debugbar::warning('Watch out…');
-    Debugbar::addMessage('Another message', 'mylabel');
-
-    return 'Just demoing some of the features of Debugbar';
-});*/
