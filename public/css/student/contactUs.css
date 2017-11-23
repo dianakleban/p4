@@ -176,68 +176,86 @@ legend
 	border-radius: 15%;
 }
 
-nav {
-    border-top:1px solid #008080;
-    border-bottom:1px solid #008080;
-    padding:5px;
-    margin-top:10px;
+nav
+{
+	border-top:1px solid #008080;
+	border-bottom:1px solid #008080;
+	padding:5px;
+	margin-top:10px;
+	border-width: 1px;
 }
 
-nav ul {
-    margin:0;
-    padding:0;
-    list-style-type:none;
+nav ul
+{
+	margin:0;
+	padding:0;
+	list-style-type:none;
 }
 
-nav ul li {
-    display:inline-block;
-    padding:10px;
+nav ul li
+{
+	display:inline-block;
+	padding:10px;
+	margin: 10px;
+	width: 130px;
+	height: 20px;
+	border-radius: 10px;
+	background-color: navy;
+	vertical-align: middle;
+
 }
 
-nav ul li a:link {
-    text-decoration:none;
-    font-weight:bold;
-    text-transform:uppercase;
+nav ul li a
+{
+	text-decoration:none;
+	font-weight:bold;
+	text-transform:uppercase;
+	color: white;
 }
 
-nav ul li a:hover {
-    color:#008080;
+nav ul li:hover
+{
+	color:white;
+	background-color: #008080
 }
 
-a.active:link, a.active:visited, a.active:active, a.active:hover {
-    color:#000040;
+a.active:link, a.active:visited, a.active:active, a.active:hover
+{
+	color: white;
 }
 
 #studentsTbl
 {
-    border:  1px solid navy;
-    background-color: #E6E6E6;
-    border-bottom-right-radius:1em;
-    border-bottom-left-radius:1em;
-    -webkit-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
-    -moz-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
-    box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+	border:  1px solid navy;
+	background-color: #E6E6E6;
+	border-bottom-right-radius:1em;
+	border-bottom-left-radius:1em;
+	-webkit-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+	-moz-box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
+	box-shadow: 10px 10px 15px -5px rgba(0,0,0,1);
 }
 
 #studentsTbl caption
 {
-    background-color: Navy;
-    color: White;
-    padding: 0.5em;
-    border-top-right-radius:1em;
-    border-top-left-radius:1em;
+	background-color: Navy;
+	color: White;
+	padding: 0.5em;
+	border-top-right-radius:1em;
+	border-top-left-radius:1em;
 }
 
-th, td {
-    padding: 0.5em;
+th, td
+{
+	padding: 0.5em;
 }
 
 thead tr th { text-align: left; border-bottom: 1px solid navy; font-weight: bold; }
 
-tbody tr th{
-    color: navy;
-    font-weight: bold;
-    text-align: left;
-    border: none;
+tbody tr th
+{
+	color: navy;
+	font-weight: bold;
+	text-align: left;
+	border: none;
 
 }

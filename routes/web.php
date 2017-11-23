@@ -28,6 +28,9 @@ Route::get('/student/{id}', 'StudentController@show');
 #Delete Student
 Route::get('/student/{id}/delete', 'StudentController@delete');
 
+#Create Course
+Route::get('/course/create', 'CourseController@create');
+Route::post('/course', 'CourseController@save');
 
 Route::get('/env', function () {
     dump(config('app.name'));
