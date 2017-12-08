@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Student;
+use App\Course;
 
 class StudentController extends Controller
 {
@@ -11,13 +12,16 @@ class StudentController extends Controller
   public function index()
   {
 
+    $coursesForCheckboxes = Course::getForCheckboxes();
+
     return view('student.index')->with([
       'name'=>session('name'),
       'email'=>session('email'),
-      'language'=>session('language')
+      'language'=>session('language'),
+      'coursesForCheckboxes' => $coursesForCheckboxes
     ]);
   }
-  
+
   #Add student info into database
   public function store(Request $request)
   {
@@ -39,6 +43,8 @@ class StudentController extends Controller
     $student->language = $request->input('language');
     $student->save();
 
+    $student->courses()->sync($request->input('courses'));
+
     return redirect('/')->with([
       'name'=>$name,
       'email'=>$email,
@@ -56,7 +62,19 @@ class StudentController extends Controller
       return redirect('/all')->with('alert', 'Student not found');
     }
 
-    return view('student.edit')->with(['student' => $student]);
+    $coursesForCheckboxes = Course::getForCheckboxes();
+
+    $coursesForThisStudent = [];
+    foreach ($student->courses as $course)
+    {
+        $coursesForThisStudent[] = $course->title;
+    }
+
+    return view('student.edit')->with([
+      'student' => $student,
+      'coursesForCheckboxes' => $coursesForCheckboxes,
+      'coursesForThisStudent' => $coursesForThisStudent
+    ]);
   }
 
   #Update edited student
@@ -69,6 +87,8 @@ class StudentController extends Controller
     ]);
 
     $student = Student::find($id);
+
+    $student->courses()->sync($request->input('courses'));
 
     $student->name = $request->input('name');
     $student->email = $request->input('email');
@@ -105,6 +125,8 @@ class StudentController extends Controller
     }
 
     $removedStudent = $student->name;
+
+    $student->courses()->detach();
     $student->delete();
 
     return redirect('/all')->with('alert', 'Student deleted: '.$removedStudent);
