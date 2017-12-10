@@ -67,7 +67,7 @@ class StudentController extends Controller
     $coursesForThisStudent = [];
     foreach ($student->courses as $course)
     {
-        $coursesForThisStudent[] = $course->title;
+      $coursesForThisStudent[] = $course->title;
     }
 
     return view('student.edit')->with([
@@ -115,6 +115,23 @@ class StudentController extends Controller
 
   #Delete student
   public function delete($id)
+  {
+
+    $student = Student::find($id);
+
+    if (!$student)
+    {
+      return redirect('/all')->with('alert', 'Student not found');
+    }
+
+    return view('student.delete')->with([
+      'student' => $student,
+      'previousUrl' => url()->previous() == url()->current() ? '/all' : url()->previous(),
+    ]);
+  }
+
+
+  public function destroy($id)
   {
 
     $student = Student::find($id);

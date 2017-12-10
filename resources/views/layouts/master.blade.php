@@ -13,12 +13,12 @@
 		<header>
 			<h1>Language School<img src="/img/phone.jpg" id="imgId" title="Contact Us" alt="Contact Us" /></h1>
 			<nav>
-            <ul>
-                <li><a href='/'>Contact Us</a></li>
-                <li><a href='/all'>All Students</a></li>
-							  <li><a href='/course/create'>Add Course</a></li>
-            </ul>
-      </nav>
+				<ul>
+					<li><a href='/'>Contact Us</a></li>
+					<li><a href='/all'>All Students</a></li>
+					<li><a href='/course/create'>Add Course</a></li>
+				</ul>
+			</nav>
 		</header>
 
 		<section>
