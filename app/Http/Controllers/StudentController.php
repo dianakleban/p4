@@ -55,7 +55,7 @@ class StudentController extends Controller
   #Edit student
   public function edit($id)
   {
-    $student = Student::find($id);
+    $student = Student::with('courses')->find($id);
 
     if (!$student)
     {
@@ -101,7 +101,7 @@ class StudentController extends Controller
   #View student
   public function show($id)
   {
-    $student = Student::find($id);
+    $student = Student::with('courses')->find($id);
 
     if (!$student)
     {
@@ -136,6 +136,7 @@ class StudentController extends Controller
   #Show All Students
   public function all()
   {
+
     $students = Student::orderBy('language')->orderBy('name')->get();
 
     return view('student.all')->with([

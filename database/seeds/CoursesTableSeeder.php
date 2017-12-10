@@ -17,9 +17,10 @@ class CoursesTableSeeder extends Seeder
       ['Conversational', 'verbal communication', 15],
       ['Intermediate', 'second level', 20],
       ['Advanced', 'advanced level', 25],
-      ['Business', 'for business use', 35]
+      ['Business', 'for business use', 35],
+      ['Writing', 'writing skills', 40]
     ];
-    
+
     $count = count($courses);
 
     foreach ($courses as $key => $course) {
