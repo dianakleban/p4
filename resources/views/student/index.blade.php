@@ -42,7 +42,7 @@ Language School
     </p>
 
     <p>
-      <label class="category">Courses:</label><br>
+      <label for="courses" class="category">Courses:</label><br>
       @include('student.coursesCheckboxes')
     </p>
 
