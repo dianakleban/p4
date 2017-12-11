@@ -41,12 +41,12 @@ Language School
   </fieldset>
 </form>
 
-<!--if there is no errors -->
-@if(count($errors) == 0)
-@if($title !='')
-<div class="welcome">
-  <p> Your course was added: "{{ $title  }}"</p>
-</div>
-@endif
-@endif
+  <!--if there is no errors -->
+  @if(count($errors) == 0)
+    @if($title !='')
+    <div class="welcome">
+      <p> Your course was added: "{{ $title  }}"</p>
+    </div>
+    @endif
+  @endif
 @endsection
