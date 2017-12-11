@@ -1,4 +1,4 @@
-<div id='courses'>
+<div class='courses'>
   @foreach ($coursesForCheckboxes as $id => $title)
       <input
           type='checkbox'
