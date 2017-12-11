@@ -1,4 +1,4 @@
-<div class='courses'>
+
   @foreach ($coursesForCheckboxes as $id => $title)
       <input
           type='checkbox'
@@ -8,4 +8,3 @@
       >
       {{ $title }} <br>
   @endforeach
-</div>

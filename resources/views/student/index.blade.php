@@ -40,10 +40,10 @@ Language School
       </select>
       @include('modules.error-field', ['fieldName' => 'language'])
     </p>
-
-    <label for="courses" class="category">Courses:</label>
-    @include('student.coursesCheckboxes')
-
+    <p>
+      <label class="category">Courses:</label><br>
+      @include('student.coursesCheckboxes')
+    </p>
     <br>
     <input type="submit" value="Submit" class="subBtn"/><span class="reqInfo">* Required fields</span>
 
