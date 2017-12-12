@@ -5,13 +5,13 @@
 @endpush
 
 @section('title')
-Confirm deletion
+Confirm deletion: {{ $student->name }}
 @endsection
 
 @section('content')
 <h1>Confirm deletion - {{ $student->name }}</h1>
 
-<p>Are you sure you want to delete <span class="nameCls">{{ $student->name}}</span>?</p>
+<p>Are you sure you want to delete <span class="nameCls">{{ $student->name }}</span>?</p>
 
 <form method='POST' action='/student/{{ $student->id }}'>
   {{ method_field('delete') }}

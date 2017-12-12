@@ -2,7 +2,7 @@
 
 
 @section('title')
-Language School
+Contact Us
 @endsection
 
 

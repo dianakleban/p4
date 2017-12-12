@@ -2,7 +2,7 @@
 
 
 @section('title')
-Language School
+All Students
 @endsection
 
 

@@ -2,7 +2,7 @@
 
 
 @section('title')
-Language School
+Edit Student: {{ $student->name }}
 @endsection
 
 

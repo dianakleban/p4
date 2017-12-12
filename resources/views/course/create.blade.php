@@ -2,7 +2,7 @@
 
 
 @section('title')
-Language School
+Add Course
 @endsection
 
 
